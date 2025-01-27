@@ -1,0 +1,190 @@
+/* Global body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('images/bg 1.jpg'); /* Add your image path */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background static while scrolling */
+    background-position: center; /* Centers the background image */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+/* Page header styling */
+.page-header {
+    text-align: center; /* Center the text horizontally */
+    position: fixed; /* Make the header stay at the top */
+    top: 0; /* Align it to the top of the page */
+    width: 100%; /* Make it span the entire width */
+    background-color: #f1f1f1; /* Add a background color for visibility */
+    padding: 20px 0; /* Add some padding to give space around the text */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for a nice effect */
+    font-size: 1.5rem; /* Adjust font size for better visibility */
+}
+
+/* Center the logo at the top */
+.logo-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Updated logo styling */
+.logo {
+    height: 150px; /* Adjust logo height */
+    width: auto;   /* Maintain aspect ratio */
+    /* Removed border-radius for no circular shape */
+}
+
+/* Ensure long URLs don't break the table layout */
+td {
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 300px; /* Adjust this value based on your preferred width */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table {
+    width: 100%; /* Make the table take full container width */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+
+/* Container styling */
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(10px); /* Optional: Adds a subtle blur effect for readability */
+    background-color: rgba(255, 255, 255, 0.85); /* Slight transparency for the container */
+    margin-top: 20px; /* Adjust to reduce gap between header and form */
+    position: relative;
+    top: 50px; /* Ensure the form is not pushed too high when header is present */
+}
+
+/* Text and form styling */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px; /* Increased padding for a more clickable area */
+    font-size: 1rem;
+    background-color: #007bff; /* Blue background color */
+    color: white;
+    border: 2px solid #007bff; /* Add a border with the same color as the background */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Smooth transition for hover effects */
+}
+
+button:hover {
+    background-color: white; /* Switch background to white on hover */
+    color: #007bff; /* Change text color to blue */
+    border: 2px solid #007bff; /* Keep border color on hover */
+}
+
+button:focus {
+    outline: none; /* Remove default browser outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add a subtle focus ring */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Additional element styling */
+p {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Ensure table cells wrap text */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: left;
+    max-width: 300px; /* Adjust this value as needed */
+    overflow-wrap: break-word;
+}
+
+thead th {
+    background-color: #f2f2f2;
+}
+
+td {
+    white-space: normal;
+}
