@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $row = $result->fetch_assoc();
         echo json_encode([
             "click_count" => $row['click_count'],
-            "ips" => explode(",", $row['ips'])  // Simplified geo-data, can use external API for detailed info
+            "ips" => explode(",", $row['ips'])  // Simplified geo-data.
         ]);
     } else {
         echo json_encode(["error" => "No analytics data found for this short URL"]);
