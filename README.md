@@ -32,7 +32,7 @@ Welcome to **SHORTEE**, a URL shortener designed to simplify URL management whil
 
 But, as the project developed, I realized it could be so much more than just a URL shortener. By integrating analytics, I wanted to empower users to gain insights into how their URLs are being interacted with — clicks, geographic locations, referral information — making SHORTEE a powerful tool for both personal and professional use.
 
-- **Deployed site:** [Visit SHORTEE Live](https://youtu.be/IC_iD19PMcI)
+- **Deployed site:** [Visit SHORTEE Live](https://youtu.be/hZKaX00vnnI)
 - **Final project blog article:** [Read Our Journey](https://medium.com/short-url-project)
 - **Author(s) LinkedIn:**  
   - [Thokozani Jan Mahlangu](https://www.linkedin.com/in/thokozani-mahlangu)
@@ -110,8 +110,8 @@ SHORTEE’s backend exposes RESTful API endpoints that make it possible for user
 
 ### **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/your-username/short-url.git
-cd short-url
+git clone https://github.com/ThokozaniLegend/SHORTEE-Portfolio-PROJECT.git
+cd SHORTEE-Portfolio-PROJECT
 ```
 
 ### **Step 2: Configure the Database**
@@ -127,7 +127,7 @@ Ensure you have:
 ### **Step 4: Run the Application**
 Navigate to:
 ```bash
-http://localhost/short-url
+http://localhost/SHORTEE-Portfolio-PROJECT
 ```
 
 ---
