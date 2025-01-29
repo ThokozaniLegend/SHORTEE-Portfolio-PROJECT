@@ -1,4 +1,7 @@
 <?php
+
+/* Delete url api */
+
 include 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
