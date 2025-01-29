@@ -1,4 +1,11 @@
 <?php
+
+/*
+ * Auth: Thokozani J. Mahlangu
+ * ALX STUDENT
+ *
+ */
+
 include 'db_connect.php';
 
 if ($conn) {

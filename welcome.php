@@ -1,4 +1,11 @@
 <?php
+
+/*
+ * Auth: Thokozani J. Mahlangu
+ * ALX STUDENT
+ *
+ */
+
 session_start();
 if (isset($_SESSION['user_id'])) {
     header("Location: index.php");

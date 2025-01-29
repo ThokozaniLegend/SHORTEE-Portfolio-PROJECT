@@ -1,6 +1,10 @@
 <?php
 
-/* Delete url api */
+/*
+ * Auth: Thokozani J. Mahlangu
+ * ALX STUDENT
+ *
+ */
 
 include 'db_connect.php';
 

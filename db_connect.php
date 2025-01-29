@@ -1,4 +1,11 @@
 <?php
+
+/*
+ * Auth: Thokozani J. Mahlangu
+ * ALX STUDENT
+ *
+ */
+
 $servername = "localhost";
 $username = "root";
 $password = "";
