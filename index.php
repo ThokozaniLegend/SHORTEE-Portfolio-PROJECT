@@ -8,7 +8,7 @@
 
 session_start();
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 
 include 'db_connect.php';
 
@@ -32,7 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['long_url'])) {
 
         function generateShortCode($length = 6) {
             return substr(
-                str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+                str_shuffle(
+                    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                ),
                 0,
                 $length
             );
@@ -44,7 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['long_url'])) {
             "INSERT INTO URLs (user_id, long_url, short_code) VALUES (?, ?, ?)"
         );
 
-        $stmt->bind_param("iss", $user_id, $long_url, $short_code);
+        $stmt->bind_param(
+            "iss",
+            $user_id,
+            $long_url,
+            $short_code
+        );
 
         if ($stmt->execute()) {
             $short_url = "http://localhost/url-shortener/" . $short_code;
@@ -66,6 +73,7 @@ $stmt = $conn->prepare("
 
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
+
 $result = $stmt->get_result();
 
 $urls = [];
@@ -83,8 +91,13 @@ $conn->close();
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>SHORTEE URL Shortener</title>
 
@@ -93,11 +106,22 @@ $conn->close();
     <script>
 
     function copyToClipboard(url) {
-        navigator.clipboard.writeText(url).then(() => {
-            alert("URL copied to clipboard!");
-        }).catch(err => {
-            console.error("Failed to copy: ", err);
-        });
+
+        navigator.clipboard.writeText(url)
+            .then(() => {
+
+                alert("URL copied to clipboard!");
+
+            })
+            .catch(err => {
+
+                console.error(
+                    "Failed to copy: ",
+                    err
+                );
+
+            });
+
     }
 
     // Function to fetch click counts using AJAX
@@ -107,7 +131,8 @@ $conn->close();
 
         xhr.open(
             "GET",
-            "fetch_click_count.php?short_code=" + encodeURIComponent(shortCode),
+            "fetch_click_count.php?short_code=" +
+            encodeURIComponent(shortCode),
             true
         );
 
@@ -117,36 +142,47 @@ $conn->close();
 
                 try {
 
-                    const response = JSON.parse(xhr.responseText);
+                    const response =
+                        JSON.parse(xhr.responseText);
 
                     document.getElementById(elementId).innerText =
                         response.click_count;
 
                 } catch (error) {
 
-                    console.error("Invalid server response:", error);
+                    console.error(
+                        "Invalid server response:",
+                        error
+                    );
 
                 }
+
             }
+
         };
 
         xhr.send();
+
     }
 
     // Fetch click counts when the page loads
     window.onload = function () {
 
-        document.querySelectorAll(".click-count").forEach(element => {
+        document
+            .querySelectorAll(".click-count")
+            .forEach(element => {
 
-            const shortCode =
-                element.getAttribute("data-short-code");
+                const shortCode =
+                    element.getAttribute(
+                        "data-short-code"
+                    );
 
-            fetchClickCount(
-                shortCode,
-                element.id
-            );
+                fetchClickCount(
+                    shortCode,
+                    element.id
+                );
 
-        });
+            });
 
     };
 
@@ -173,11 +209,18 @@ $conn->close();
 
         <h1>
             Hello,
-            <?php echo htmlspecialchars($_SESSION['username']); ?>!
+            <?php
+            echo htmlspecialchars(
+                $_SESSION['username']
+            );
+            ?>!
             Shorten Your URL
         </h1>
 
-        <form action="index.php" method="post">
+        <form
+            action="index.php"
+            method="post"
+        >
 
             <input
                 type="text"
@@ -196,7 +239,11 @@ $conn->close();
         <?php if (!empty($error_message)): ?>
 
             <p class="error">
-                <?php echo htmlspecialchars($error_message); ?>
+                <?php
+                echo htmlspecialchars(
+                    $error_message
+                );
+                ?>
             </p>
 
         <?php endif; ?>
@@ -208,10 +255,14 @@ $conn->close();
 
                 Shortened URL:
 
-                <a href="<?php echo htmlspecialchars($short_url); ?>">
-
-                    <?php echo htmlspecialchars($short_url); ?>
-
+                <a
+                    href="<?php echo htmlspecialchars($short_url); ?>"
+                >
+                    <?php
+                    echo htmlspecialchars(
+                        $short_url
+                    );
+                    ?>
                 </a>
 
                 <button
