@@ -136,7 +136,7 @@ The frontend was designed with usability across desktop and mobile screen sizes 
 
 * **Git** — version control
 * **GitHub** — source-code management and collaboration
-* **Composer** — PHP dependency management
+- **Composer** — PHP dependency and environment requirement configuration
 
 ---
 
@@ -276,7 +276,6 @@ Before running SHORTEE locally, ensure you have:
 * PHP
 * MySQL
 * Apache or another compatible web server
-* Composer
 * Git
 
 ---
